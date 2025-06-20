@@ -11,7 +11,7 @@ const AddVehicle = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/vehicles`, form);
+      await axios.post(`${process.env.VITE_API_BASE_URL}/vehicles`, form);
       setMessage("✅ Vehicle added successfully");
     } catch (err) {
       setMessage("❌ Error adding vehicle");
