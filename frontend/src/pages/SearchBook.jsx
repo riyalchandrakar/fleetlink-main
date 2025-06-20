@@ -15,7 +15,7 @@ const SearchBook = () => {
   const search = async () => {
     try {
       const { data } = await axios.get(
-        `${process.env.VITE_API_BASE_URL}/vehicles/available`,
+      `${import.meta.env.VITE_API_BASE_URL}/vehicles/available`,
         { params: query }
       );
       setResults(data.vehicles);
@@ -26,7 +26,7 @@ const SearchBook = () => {
 
   const book = async (vehicleId) => {
     try {
-      await axios.post(`${process.env.VITE_API_BASE_URL}/bookings`, {
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/bookings`, {
         vehicleId,
         ...query,
         customerId: "test-customer-123",
